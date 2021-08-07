@@ -19,7 +19,8 @@ struct BackButton: View {
                 
                 Image(systemName: "chevron.right") // set image here
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.AppPrimaryColor)
+                    .foregroundColor(.AppFount)
+                    .font(.custom(Fount_name.b.rawValue, size: 30))
                 
             }
             Spacer()

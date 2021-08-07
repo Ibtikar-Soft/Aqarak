@@ -16,7 +16,7 @@ struct Menue_Button: View {
 
             Spacer()
             TestButton()
-        }.padding(.horizontal,20)
+        }.padding(.horizontal,20).padding(.top,10)
     }
 }
 
