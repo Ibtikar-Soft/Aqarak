@@ -11,11 +11,11 @@ struct Splash: View {
      var isFirestOpen: Bool =  VarUserDefault.SysGlobalData.getGlobalBool(key: VarUserDefault.SysGlobalData.isFirestOpen)
     var isLogin: Bool =  VarUserDefault.SysGlobalData.getGlobalBool(key: VarUserDefault.SysGlobalData.isLogin)
     @State var logo_key=0
-     var uAnimationDuration: Double { return 3.0 }
+     var uAnimationDuration: Double { return 0.4 }
     var body: some View {
         ZStack{
         if logo_key == 0{
-            Image("kayan_logo").resizable().frame(width: 400, height: 400, alignment: .center).onAppear{
+            Image("AppLogo").resizable().frame(width: 400, height: 400, alignment: .center).onAppear{
                 restartAnimation()
             }
         }
@@ -54,12 +54,12 @@ struct Splash: View {
           self.logo_key += 1
         }
         else{
-        withAnimation(.easeIn(duration: uAnimationDuration)) {
+//        withAnimation(.easeIn(duration: uAnimationDuration)) {
             self.logo_key += 1
 //            isPresented = self.logo_key == 2 ? true : false
 //            restartAnimation()
            }
-        }
+//        }
       }
     }
 }

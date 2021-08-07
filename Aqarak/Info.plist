@@ -25,6 +25,12 @@
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<true/>
 	</dict>
+    <key>UIAppFonts</key>
+    <array>
+        <string>Cairo-Black.ttf</string>
+        <string>Cairo-Light.ttf</string>
+        
+    </array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchScreen</key>

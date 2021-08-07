@@ -23,6 +23,20 @@
 		FA7546DB26BEA81E00C0C4D9 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546DA26BEA81E00C0C4D9 /* SignIn.swift */; };
 		FA7546DE26BEA86600C0C4D9 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546DD26BEA86600C0C4D9 /* Home.swift */; };
 		FA7546E326BEA8DB00C0C4D9 /* keyboardEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546E226BEA8DB00C0C4D9 /* keyboardEx.swift */; };
+		FA7546E526BEAC3500C0C4D9 /* OnboardingViewOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546E426BEAC3500C0C4D9 /* OnboardingViewOne.swift */; };
+		FA7546E726BEAC5500C0C4D9 /* OnboardingViewThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546E626BEAC5500C0C4D9 /* OnboardingViewThree.swift */; };
+		FA7546E926BEAC7200C0C4D9 /* OnboardingViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546E826BEAC7200C0C4D9 /* OnboardingViewTwo.swift */; };
+		FA7546ED26BEB11C00C0C4D9 /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA7546EB26BEB11C00C0C4D9 /* Cairo-Light.ttf */; };
+		FA7546EE26BEB11C00C0C4D9 /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA7546EC26BEB11C00C0C4D9 /* Cairo-Black.ttf */; };
+		FA7546F126BEB15200C0C4D9 /* Fount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546F026BEB15200C0C4D9 /* Fount.swift */; };
+		FA7546F426BEB73500C0C4D9 /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546F326BEB73500C0C4D9 /* ColorExt.swift */; };
+		FA7546F626BEBE1000C0C4D9 /* CTFStyleClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546F526BEBE1000C0C4D9 /* CTFStyleClearBackground.swift */; };
+		FA7546F926BEBE6C00C0C4D9 /* FountEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546F826BEBE6C00C0C4D9 /* FountEx.swift */; };
+		FA7546FC26BEBF3200C0C4D9 /* TextBindingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546FB26BEBF3200C0C4D9 /* TextBindingManager.swift */; };
+		FA7546FF26BEC62900C0C4D9 /* DateFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546FE26BEC62900C0C4D9 /* DateFunc.swift */; };
+		FA75470126BEC63B00C0C4D9 /* StringFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75470026BEC63B00C0C4D9 /* StringFunc.swift */; };
+		FA75470426BEC69600C0C4D9 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75470326BEC69600C0C4D9 /* Connection.swift */; };
+		FA75470626BEC6D600C0C4D9 /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75470526BEC6D600C0C4D9 /* RestAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +85,20 @@
 		FA7546DA26BEA81E00C0C4D9 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		FA7546DD26BEA86600C0C4D9 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		FA7546E226BEA8DB00C0C4D9 /* keyboardEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardEx.swift; sourceTree = "<group>"; };
+		FA7546E426BEAC3500C0C4D9 /* OnboardingViewOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewOne.swift; sourceTree = "<group>"; };
+		FA7546E626BEAC5500C0C4D9 /* OnboardingViewThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewThree.swift; sourceTree = "<group>"; };
+		FA7546E826BEAC7200C0C4D9 /* OnboardingViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewTwo.swift; sourceTree = "<group>"; };
+		FA7546EB26BEB11C00C0C4D9 /* Cairo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Light.ttf"; sourceTree = "<group>"; };
+		FA7546EC26BEB11C00C0C4D9 /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
+		FA7546F026BEB15200C0C4D9 /* Fount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fount.swift; sourceTree = "<group>"; };
+		FA7546F326BEB73500C0C4D9 /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
+		FA7546F526BEBE1000C0C4D9 /* CTFStyleClearBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTFStyleClearBackground.swift; sourceTree = "<group>"; };
+		FA7546F826BEBE6C00C0C4D9 /* FountEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FountEx.swift; sourceTree = "<group>"; };
+		FA7546FB26BEBF3200C0C4D9 /* TextBindingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBindingManager.swift; sourceTree = "<group>"; };
+		FA7546FE26BEC62900C0C4D9 /* DateFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFunc.swift; sourceTree = "<group>"; };
+		FA75470026BEC63B00C0C4D9 /* StringFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFunc.swift; sourceTree = "<group>"; };
+		FA75470326BEC69600C0C4D9 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		FA75470526BEC6D600C0C4D9 /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +167,8 @@
 		FA7546A126BEA1AE00C0C4D9 /* Aqarak */ = {
 			isa = PBXGroup;
 			children = (
+				FA7546EF26BEB14300C0C4D9 /* Enum */,
+				FA7546EA26BEAFE300C0C4D9 /* Fonts */,
 				FA7546DF26BEA89800C0C4D9 /* Extention */,
 				FA7546D026BEA4D700C0C4D9 /* AppService */,
 				FA7546CD26BEA48E00C0C4D9 /* View */,
@@ -191,6 +221,8 @@
 		FA7546D026BEA4D700C0C4D9 /* AppService */ = {
 			isa = PBXGroup;
 			children = (
+				FA75470226BEC68400C0C4D9 /* API */,
+				FA7546FD26BEC60A00C0C4D9 /* Function */,
 				FA7546D126BEA50400C0C4D9 /* UserDefault */,
 			);
 			path = AppService;
@@ -209,6 +241,9 @@
 			isa = PBXGroup;
 			children = (
 				FA7546D726BEA78500C0C4D9 /* AppInto.swift */,
+				FA7546E426BEAC3500C0C4D9 /* OnboardingViewOne.swift */,
+				FA7546E626BEAC5500C0C4D9 /* OnboardingViewThree.swift */,
+				FA7546E826BEAC7200C0C4D9 /* OnboardingViewTwo.swift */,
 			);
 			path = AppInto;
 			sourceTree = "<group>";
@@ -232,6 +267,9 @@
 		FA7546DF26BEA89800C0C4D9 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
+				FA7546FA26BEBF1900C0C4D9 /* TextBinding */,
+				FA7546F726BEBE5B00C0C4D9 /* Fount */,
+				FA7546F226BEB71800C0C4D9 /* Color */,
 				FA7546E026BEA8AF00C0C4D9 /* View */,
 			);
 			path = Extention;
@@ -241,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				FA7546E126BEA8B900C0C4D9 /* Keyboard */,
+				FA7546F526BEBE1000C0C4D9 /* CTFStyleClearBackground.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +290,65 @@
 				FA7546E226BEA8DB00C0C4D9 /* keyboardEx.swift */,
 			);
 			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		FA7546EA26BEAFE300C0C4D9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546EC26BEB11C00C0C4D9 /* Cairo-Black.ttf */,
+				FA7546EB26BEB11C00C0C4D9 /* Cairo-Light.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FA7546EF26BEB14300C0C4D9 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546F026BEB15200C0C4D9 /* Fount.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		FA7546F226BEB71800C0C4D9 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546F326BEB73500C0C4D9 /* ColorExt.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		FA7546F726BEBE5B00C0C4D9 /* Fount */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546F826BEBE6C00C0C4D9 /* FountEx.swift */,
+			);
+			path = Fount;
+			sourceTree = "<group>";
+		};
+		FA7546FA26BEBF1900C0C4D9 /* TextBinding */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546FB26BEBF3200C0C4D9 /* TextBindingManager.swift */,
+			);
+			path = TextBinding;
+			sourceTree = "<group>";
+		};
+		FA7546FD26BEC60A00C0C4D9 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546FE26BEC62900C0C4D9 /* DateFunc.swift */,
+				FA75470026BEC63B00C0C4D9 /* StringFunc.swift */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		FA75470226BEC68400C0C4D9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FA75470326BEC69600C0C4D9 /* Connection.swift */,
+				FA75470526BEC6D600C0C4D9 /* RestAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		FCCBC81C0D5D6188833D6D66 /* Frameworks */ = {
@@ -374,7 +472,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA7546AA26BEA1AF00C0C4D9 /* Preview Assets.xcassets in Resources */,
+				FA7546ED26BEB11C00C0C4D9 /* Cairo-Light.ttf in Resources */,
 				FA7546A726BEA1AF00C0C4D9 /* Assets.xcassets in Resources */,
+				FA7546EE26BEB11C00C0C4D9 /* Cairo-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,12 +637,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA7546D326BEA51900C0C4D9 /* VarUserDefault.swift in Sources */,
+				FA7546F926BEBE6C00C0C4D9 /* FountEx.swift in Sources */,
 				FA7546A526BEA1AE00C0C4D9 /* ContentView.swift in Sources */,
 				FA7546D526BEA52600C0C4D9 /* ObjectUserDefault.swift in Sources */,
+				FA7546F626BEBE1000C0C4D9 /* CTFStyleClearBackground.swift in Sources */,
 				FA7546D826BEA78500C0C4D9 /* AppInto.swift in Sources */,
 				FA7546DB26BEA81E00C0C4D9 /* SignIn.swift in Sources */,
+				FA75470426BEC69600C0C4D9 /* Connection.swift in Sources */,
 				FA7546CF26BEA49C00C0C4D9 /* Splash.swift in Sources */,
+				FA75470626BEC6D600C0C4D9 /* RestAPI.swift in Sources */,
+				FA7546F126BEB15200C0C4D9 /* Fount.swift in Sources */,
+				FA7546FF26BEC62900C0C4D9 /* DateFunc.swift in Sources */,
+				FA7546E926BEAC7200C0C4D9 /* OnboardingViewTwo.swift in Sources */,
+				FA7546E526BEAC3500C0C4D9 /* OnboardingViewOne.swift in Sources */,
+				FA7546F426BEB73500C0C4D9 /* ColorExt.swift in Sources */,
+				FA7546FC26BEBF3200C0C4D9 /* TextBindingManager.swift in Sources */,
 				FA7546DE26BEA86600C0C4D9 /* Home.swift in Sources */,
+				FA75470126BEC63B00C0C4D9 /* StringFunc.swift in Sources */,
+				FA7546E726BEAC5500C0C4D9 /* OnboardingViewThree.swift in Sources */,
 				FA7546E326BEA8DB00C0C4D9 /* keyboardEx.swift in Sources */,
 				FA7546A326BEA1AE00C0C4D9 /* AqarakApp.swift in Sources */,
 			);
@@ -715,7 +827,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibtikar.Aqarak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -738,7 +850,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibtikar.Aqarak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
