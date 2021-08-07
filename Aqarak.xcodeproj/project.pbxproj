@@ -37,6 +37,12 @@
 		FA75470126BEC63B00C0C4D9 /* StringFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75470026BEC63B00C0C4D9 /* StringFunc.swift */; };
 		FA75470426BEC69600C0C4D9 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75470326BEC69600C0C4D9 /* Connection.swift */; };
 		FA75470626BEC6D600C0C4D9 /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75470526BEC6D600C0C4D9 /* RestAPI.swift */; };
+		FA75470926BECBA200C0C4D9 /* Menue_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75470826BECBA200C0C4D9 /* Menue_Button.swift */; };
+		FA75470B26BECC8200C0C4D9 /* menue_button_name.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75470A26BECC8200C0C4D9 /* menue_button_name.swift */; };
+		FA75470E26BED35B00C0C4D9 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75470D26BED35B00C0C4D9 /* About.swift */; };
+		FA75471026BED36800C0C4D9 /* Fav.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75470F26BED36800C0C4D9 /* Fav.swift */; };
+		FA75471226BED38400C0C4D9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75471126BED38400C0C4D9 /* Profile.swift */; };
+		FA75471526BED66F00C0C4D9 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75471426BED66F00C0C4D9 /* BackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +105,12 @@
 		FA75470026BEC63B00C0C4D9 /* StringFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFunc.swift; sourceTree = "<group>"; };
 		FA75470326BEC69600C0C4D9 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		FA75470526BEC6D600C0C4D9 /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
+		FA75470826BECBA200C0C4D9 /* Menue_Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menue_Button.swift; sourceTree = "<group>"; };
+		FA75470A26BECC8200C0C4D9 /* menue_button_name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menue_button_name.swift; sourceTree = "<group>"; };
+		FA75470D26BED35B00C0C4D9 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		FA75470F26BED36800C0C4D9 /* Fav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fav.swift; sourceTree = "<group>"; };
+		FA75471126BED38400C0C4D9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		FA75471426BED66F00C0C4D9 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +222,8 @@
 		FA7546CD26BEA48E00C0C4D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA75471326BED65E00C0C4D9 /* BackButton */,
+				FA75470C26BED33700C0C4D9 /* Menue */,
 				FA7546DC26BEA85800C0C4D9 /* Home */,
 				FA7546D926BEA80B00C0C4D9 /* Auth */,
 				FA7546D626BEA77300C0C4D9 /* AppInto */,
@@ -305,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				FA7546F026BEB15200C0C4D9 /* Fount.swift */,
+				FA75470A26BECC8200C0C4D9 /* menue_button_name.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -349,6 +364,33 @@
 				FA75470526BEC6D600C0C4D9 /* RestAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		FA75470726BECB8000C0C4D9 /* Menue_Button_Items */ = {
+			isa = PBXGroup;
+			children = (
+				FA75470826BECBA200C0C4D9 /* Menue_Button.swift */,
+			);
+			path = Menue_Button_Items;
+			sourceTree = "<group>";
+		};
+		FA75470C26BED33700C0C4D9 /* Menue */ = {
+			isa = PBXGroup;
+			children = (
+				FA75470726BECB8000C0C4D9 /* Menue_Button_Items */,
+				FA75470D26BED35B00C0C4D9 /* About.swift */,
+				FA75470F26BED36800C0C4D9 /* Fav.swift */,
+				FA75471126BED38400C0C4D9 /* Profile.swift */,
+			);
+			path = Menue;
+			sourceTree = "<group>";
+		};
+		FA75471326BED65E00C0C4D9 /* BackButton */ = {
+			isa = PBXGroup;
+			children = (
+				FA75471426BED66F00C0C4D9 /* BackButton.swift */,
+			);
+			path = BackButton;
 			sourceTree = "<group>";
 		};
 		FCCBC81C0D5D6188833D6D66 /* Frameworks */ = {
@@ -637,7 +679,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA7546D326BEA51900C0C4D9 /* VarUserDefault.swift in Sources */,
+				FA75470E26BED35B00C0C4D9 /* About.swift in Sources */,
 				FA7546F926BEBE6C00C0C4D9 /* FountEx.swift in Sources */,
+				FA75471226BED38400C0C4D9 /* Profile.swift in Sources */,
 				FA7546A526BEA1AE00C0C4D9 /* ContentView.swift in Sources */,
 				FA7546D526BEA52600C0C4D9 /* ObjectUserDefault.swift in Sources */,
 				FA7546F626BEBE1000C0C4D9 /* CTFStyleClearBackground.swift in Sources */,
@@ -647,15 +691,19 @@
 				FA7546CF26BEA49C00C0C4D9 /* Splash.swift in Sources */,
 				FA75470626BEC6D600C0C4D9 /* RestAPI.swift in Sources */,
 				FA7546F126BEB15200C0C4D9 /* Fount.swift in Sources */,
+				FA75471026BED36800C0C4D9 /* Fav.swift in Sources */,
 				FA7546FF26BEC62900C0C4D9 /* DateFunc.swift in Sources */,
 				FA7546E926BEAC7200C0C4D9 /* OnboardingViewTwo.swift in Sources */,
 				FA7546E526BEAC3500C0C4D9 /* OnboardingViewOne.swift in Sources */,
+				FA75470B26BECC8200C0C4D9 /* menue_button_name.swift in Sources */,
 				FA7546F426BEB73500C0C4D9 /* ColorExt.swift in Sources */,
 				FA7546FC26BEBF3200C0C4D9 /* TextBindingManager.swift in Sources */,
 				FA7546DE26BEA86600C0C4D9 /* Home.swift in Sources */,
 				FA75470126BEC63B00C0C4D9 /* StringFunc.swift in Sources */,
 				FA7546E726BEAC5500C0C4D9 /* OnboardingViewThree.swift in Sources */,
+				FA75471526BED66F00C0C4D9 /* BackButton.swift in Sources */,
 				FA7546E326BEA8DB00C0C4D9 /* keyboardEx.swift in Sources */,
+				FA75470926BECBA200C0C4D9 /* Menue_Button.swift in Sources */,
 				FA7546A326BEA1AE00C0C4D9 /* AqarakApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

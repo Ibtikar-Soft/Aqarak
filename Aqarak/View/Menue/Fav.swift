@@ -1,5 +1,5 @@
 //
-//  Home.swift
+//  Fav.swift
 //  Aqarak
 //
 //  Created by Sandal on 28/12/1442 AH.
@@ -7,17 +7,14 @@
 
 import SwiftUI
 
-struct Home: View {
+struct Fav: View {
     var body: some View {
-        VStack{
-        Menue_Button()
-         Spacer()
-        }
+        BackButton()
     }
 }
 
-struct Home_Previews: PreviewProvider {
+struct Fav_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Fav()
     }
 }
