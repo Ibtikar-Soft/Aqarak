@@ -3,16 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F94ADEF392CEA5B00C3680D /* Pods_AqarakTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53EDA6D5174D7E8C428D3384 /* Pods_AqarakTests.framework */; };
+		42B8E1E94DD4905F56A81F03 /* Pods_Aqarak_AqarakUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F734035B456D5D22D11143 /* Pods_Aqarak_AqarakUITests.framework */; };
+		75B42AA43A41201B006FBC3D /* Pods_Aqarak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB873C05B0C828008E2C4296 /* Pods_Aqarak.framework */; };
 		FA7546A326BEA1AE00C0C4D9 /* AqarakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546A226BEA1AE00C0C4D9 /* AqarakApp.swift */; };
 		FA7546A526BEA1AE00C0C4D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546A426BEA1AE00C0C4D9 /* ContentView.swift */; };
 		FA7546A726BEA1AF00C0C4D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7546A626BEA1AF00C0C4D9 /* Assets.xcassets */; };
 		FA7546AA26BEA1AF00C0C4D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7546A926BEA1AF00C0C4D9 /* Preview Assets.xcassets */; };
 		FA7546B526BEA1B000C0C4D9 /* AqarakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546B426BEA1B000C0C4D9 /* AqarakTests.swift */; };
 		FA7546C026BEA1B000C0C4D9 /* AqarakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546BF26BEA1B000C0C4D9 /* AqarakUITests.swift */; };
+		FA7546CF26BEA49C00C0C4D9 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546CE26BEA49C00C0C4D9 /* Splash.swift */; };
+		FA7546D326BEA51900C0C4D9 /* VarUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546D226BEA51900C0C4D9 /* VarUserDefault.swift */; };
+		FA7546D526BEA52600C0C4D9 /* ObjectUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546D426BEA52600C0C4D9 /* ObjectUserDefault.swift */; };
+		FA7546D826BEA78500C0C4D9 /* AppInto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546D726BEA78500C0C4D9 /* AppInto.swift */; };
+		FA7546DB26BEA81E00C0C4D9 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546DA26BEA81E00C0C4D9 /* SignIn.swift */; };
+		FA7546DE26BEA86600C0C4D9 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546DD26BEA86600C0C4D9 /* Home.swift */; };
+		FA7546E326BEA8DB00C0C4D9 /* keyboardEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546E226BEA8DB00C0C4D9 /* keyboardEx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18D4F33EDAAA92E409C605AB /* Pods-Aqarak-AqarakUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aqarak-AqarakUITests.debug.xcconfig"; path = "Target Support Files/Pods-Aqarak-AqarakUITests/Pods-Aqarak-AqarakUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		323F4CAFEE8A0CEC878DE1A1 /* Pods-Aqarak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aqarak.debug.xcconfig"; path = "Target Support Files/Pods-Aqarak/Pods-Aqarak.debug.xcconfig"; sourceTree = "<group>"; };
+		52F734035B456D5D22D11143 /* Pods_Aqarak_AqarakUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aqarak_AqarakUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53EDA6D5174D7E8C428D3384 /* Pods_AqarakTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AqarakTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E41E33622A1A5A3ADE23060 /* Pods-AqarakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AqarakTests.release.xcconfig"; path = "Target Support Files/Pods-AqarakTests/Pods-AqarakTests.release.xcconfig"; sourceTree = "<group>"; };
+		A3C3C1B692A4DB5DCD0287D1 /* Pods-Aqarak-AqarakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aqarak-AqarakUITests.release.xcconfig"; path = "Target Support Files/Pods-Aqarak-AqarakUITests/Pods-Aqarak-AqarakUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AB873C05B0C828008E2C4296 /* Pods_Aqarak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aqarak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACC52670D885D405B8E24311 /* Pods-AqarakTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AqarakTests.debug.xcconfig"; path = "Target Support Files/Pods-AqarakTests/Pods-AqarakTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB7EC3FCB579CC8041C6DF79 /* Pods-Aqarak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aqarak.release.xcconfig"; path = "Target Support Files/Pods-Aqarak/Pods-Aqarak.release.xcconfig"; sourceTree = "<group>"; };
 		FA75469F26BEA1AE00C0C4D9 /* Aqarak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aqarak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7546A226BEA1AE00C0C4D9 /* AqarakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqarakApp.swift; sourceTree = "<group>"; };
 		FA7546A426BEA1AE00C0C4D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +64,13 @@
 		FA7546BB26BEA1B000C0C4D9 /* AqarakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AqarakUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7546BF26BEA1B000C0C4D9 /* AqarakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqarakUITests.swift; sourceTree = "<group>"; };
 		FA7546C126BEA1B000C0C4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA7546CE26BEA49C00C0C4D9 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		FA7546D226BEA51900C0C4D9 /* VarUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarUserDefault.swift; sourceTree = "<group>"; };
+		FA7546D426BEA52600C0C4D9 /* ObjectUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectUserDefault.swift; sourceTree = "<group>"; };
+		FA7546D726BEA78500C0C4D9 /* AppInto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInto.swift; sourceTree = "<group>"; };
+		FA7546DA26BEA81E00C0C4D9 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		FA7546DD26BEA86600C0C4D9 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		FA7546E226BEA8DB00C0C4D9 /* keyboardEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardEx.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75B42AA43A41201B006FBC3D /* Pods_Aqarak.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F94ADEF392CEA5B00C3680D /* Pods_AqarakTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +94,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B8E1E94DD4905F56A81F03 /* Pods_Aqarak_AqarakUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F0ED751FC8640F94C4E2BAE8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				323F4CAFEE8A0CEC878DE1A1 /* Pods-Aqarak.debug.xcconfig */,
+				DB7EC3FCB579CC8041C6DF79 /* Pods-Aqarak.release.xcconfig */,
+				18D4F33EDAAA92E409C605AB /* Pods-Aqarak-AqarakUITests.debug.xcconfig */,
+				A3C3C1B692A4DB5DCD0287D1 /* Pods-Aqarak-AqarakUITests.release.xcconfig */,
+				ACC52670D885D405B8E24311 /* Pods-AqarakTests.debug.xcconfig */,
+				8E41E33622A1A5A3ADE23060 /* Pods-AqarakTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA75469626BEA1AE00C0C4D9 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +121,8 @@
 				FA7546B326BEA1B000C0C4D9 /* AqarakTests */,
 				FA7546BE26BEA1B000C0C4D9 /* AqarakUITests */,
 				FA7546A026BEA1AE00C0C4D9 /* Products */,
+				F0ED751FC8640F94C4E2BAE8 /* Pods */,
+				FCCBC81C0D5D6188833D6D66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +139,9 @@
 		FA7546A126BEA1AE00C0C4D9 /* Aqarak */ = {
 			isa = PBXGroup;
 			children = (
+				FA7546DF26BEA89800C0C4D9 /* Extention */,
+				FA7546D026BEA4D700C0C4D9 /* AppService */,
+				FA7546CD26BEA48E00C0C4D9 /* View */,
 				FA7546A226BEA1AE00C0C4D9 /* AqarakApp.swift */,
 				FA7546A426BEA1AE00C0C4D9 /* ContentView.swift */,
 				FA7546A626BEA1AF00C0C4D9 /* Assets.xcassets */,
@@ -130,6 +177,92 @@
 			path = AqarakUITests;
 			sourceTree = "<group>";
 		};
+		FA7546CD26BEA48E00C0C4D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546DC26BEA85800C0C4D9 /* Home */,
+				FA7546D926BEA80B00C0C4D9 /* Auth */,
+				FA7546D626BEA77300C0C4D9 /* AppInto */,
+				FA7546CE26BEA49C00C0C4D9 /* Splash.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA7546D026BEA4D700C0C4D9 /* AppService */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546D126BEA50400C0C4D9 /* UserDefault */,
+			);
+			path = AppService;
+			sourceTree = "<group>";
+		};
+		FA7546D126BEA50400C0C4D9 /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546D226BEA51900C0C4D9 /* VarUserDefault.swift */,
+				FA7546D426BEA52600C0C4D9 /* ObjectUserDefault.swift */,
+			);
+			path = UserDefault;
+			sourceTree = "<group>";
+		};
+		FA7546D626BEA77300C0C4D9 /* AppInto */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546D726BEA78500C0C4D9 /* AppInto.swift */,
+			);
+			path = AppInto;
+			sourceTree = "<group>";
+		};
+		FA7546D926BEA80B00C0C4D9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546DA26BEA81E00C0C4D9 /* SignIn.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FA7546DC26BEA85800C0C4D9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546DD26BEA86600C0C4D9 /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FA7546DF26BEA89800C0C4D9 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546E026BEA8AF00C0C4D9 /* View */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		FA7546E026BEA8AF00C0C4D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546E126BEA8B900C0C4D9 /* Keyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA7546E126BEA8B900C0C4D9 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FA7546E226BEA8DB00C0C4D9 /* keyboardEx.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		FCCBC81C0D5D6188833D6D66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB873C05B0C828008E2C4296 /* Pods_Aqarak.framework */,
+				52F734035B456D5D22D11143 /* Pods_Aqarak_AqarakUITests.framework */,
+				53EDA6D5174D7E8C428D3384 /* Pods_AqarakTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +270,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA7546C426BEA1B000C0C4D9 /* Build configuration list for PBXNativeTarget "Aqarak" */;
 			buildPhases = (
+				875EF13E796D24C5EDA82890 /* [CP] Check Pods Manifest.lock */,
 				FA75469B26BEA1AE00C0C4D9 /* Sources */,
 				FA75469C26BEA1AE00C0C4D9 /* Frameworks */,
 				FA75469D26BEA1AE00C0C4D9 /* Resources */,
+				93025676374278F12BEB0409 /* [CP] Embed Pods Frameworks */,
+				9F791CFF20F4C53E2C032F44 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,6 +290,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA7546C726BEA1B000C0C4D9 /* Build configuration list for PBXNativeTarget "AqarakTests" */;
 			buildPhases = (
+				5DB4B961CA2EABEA8D7C6817 /* [CP] Check Pods Manifest.lock */,
 				FA7546AC26BEA1B000C0C4D9 /* Sources */,
 				FA7546AD26BEA1B000C0C4D9 /* Frameworks */,
 				FA7546AE26BEA1B000C0C4D9 /* Resources */,
@@ -172,9 +309,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA7546CA26BEA1B000C0C4D9 /* Build configuration list for PBXNativeTarget "AqarakUITests" */;
 			buildPhases = (
+				2CB47D9F56DCEAA2D86A43C6 /* [CP] Check Pods Manifest.lock */,
 				FA7546B726BEA1B000C0C4D9 /* Sources */,
 				FA7546B826BEA1B000C0C4D9 /* Frameworks */,
 				FA7546B926BEA1B000C0C4D9 /* Resources */,
+				151C4744C4154438137C078B /* [CP] Embed Pods Frameworks */,
+				0079C041B073CBC43FF5539F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,12 +394,156 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0079C041B073CBC43FF5539F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aqarak-AqarakUITests/Pods-Aqarak-AqarakUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aqarak-AqarakUITests/Pods-Aqarak-AqarakUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aqarak-AqarakUITests/Pods-Aqarak-AqarakUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		151C4744C4154438137C078B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aqarak-AqarakUITests/Pods-Aqarak-AqarakUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aqarak-AqarakUITests/Pods-Aqarak-AqarakUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aqarak-AqarakUITests/Pods-Aqarak-AqarakUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CB47D9F56DCEAA2D86A43C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aqarak-AqarakUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DB4B961CA2EABEA8D7C6817 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AqarakTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		875EF13E796D24C5EDA82890 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aqarak-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93025676374278F12BEB0409 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aqarak/Pods-Aqarak-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aqarak/Pods-Aqarak-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aqarak/Pods-Aqarak-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F791CFF20F4C53E2C032F44 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aqarak/Pods-Aqarak-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aqarak/Pods-Aqarak-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aqarak/Pods-Aqarak-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA75469B26BEA1AE00C0C4D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7546D326BEA51900C0C4D9 /* VarUserDefault.swift in Sources */,
 				FA7546A526BEA1AE00C0C4D9 /* ContentView.swift in Sources */,
+				FA7546D526BEA52600C0C4D9 /* ObjectUserDefault.swift in Sources */,
+				FA7546D826BEA78500C0C4D9 /* AppInto.swift in Sources */,
+				FA7546DB26BEA81E00C0C4D9 /* SignIn.swift in Sources */,
+				FA7546CF26BEA49C00C0C4D9 /* Splash.swift in Sources */,
+				FA7546DE26BEA86600C0C4D9 /* Home.swift in Sources */,
+				FA7546E326BEA8DB00C0C4D9 /* keyboardEx.swift in Sources */,
 				FA7546A326BEA1AE00C0C4D9 /* AqarakApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +698,7 @@
 		};
 		FA7546C526BEA1B000C0C4D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 323F4CAFEE8A0CEC878DE1A1 /* Pods-Aqarak.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -436,6 +721,7 @@
 		};
 		FA7546C626BEA1B000C0C4D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB7EC3FCB579CC8041C6DF79 /* Pods-Aqarak.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -458,6 +744,7 @@
 		};
 		FA7546C826BEA1B000C0C4D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACC52670D885D405B8E24311 /* Pods-AqarakTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -480,6 +767,7 @@
 		};
 		FA7546C926BEA1B000C0C4D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E41E33622A1A5A3ADE23060 /* Pods-AqarakTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -502,6 +790,7 @@
 		};
 		FA7546CB26BEA1B000C0C4D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18D4F33EDAAA92E409C605AB /* Pods-Aqarak-AqarakUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +811,7 @@
 		};
 		FA7546CC26BEA1B000C0C4D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3C3C1B692A4DB5DCD0287D1 /* Pods-Aqarak-AqarakUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
