@@ -9,22 +9,23 @@ import SwiftUI
 import GoogleMaps
 import GooglePlaces
 struct ContentView: View {
+    @State var data : Data?
+    
     var body: some View {
+        var longitude = 24.754383
+        var latitude = 46.757459
+        GoogleMapsView(longitude: latitude, latitude: longitude).cornerRadius(20)
 //       Splash()
 //        SignIn()
 //        TestButton()
 //        if isValidEmailAddress(emailAddressString: "awad619@hotmail.com"){
 //            Home()
-        PlanetDetails(id: 2)
+//        PlanetDetails(id: 2)
 //        Fav()
         
 //        }
 //       ? }
-            .onAppear{
-                requestPermission()
-                GMSServices.provideAPIKey("AIzaSyBApEGRGZKAVt2_b3U7Yur7qccgnCLjsf0")
-                GMSPlacesClient.provideAPIKey("AIzaSyBApEGRGZKAVt2_b3U7Yur7qccgnCLjsf0")
-            }
+            
     }
     func requestPermission() -> Void {
         UNUserNotificationCenter
@@ -37,8 +38,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

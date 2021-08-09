@@ -57,6 +57,7 @@
 		FA75473126BEFC7800C0C4D9 /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75473026BEFC7800C0C4D9 /* GoogleMapsView.swift */; };
 		FA75473326BF00CE00C0C4D9 /* Mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75473226BF00CE00C0C4D9 /* Mapview.swift */; };
 		FA75473626BF023700C0C4D9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75473526BF023700C0C4D9 /* LocationManager.swift */; };
+		FA75473926BFCE3100C0C4D9 /* PDFKitRepresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75473826BFCE3100C0C4D9 /* PDFKitRepresentedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		FA75473026BEFC7800C0C4D9 /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
 		FA75473226BF00CE00C0C4D9 /* Mapview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapview.swift; sourceTree = "<group>"; };
 		FA75473526BF023700C0C4D9 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		FA75473826BFCE3100C0C4D9 /* PDFKitRepresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitRepresentedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 		FA7546CD26BEA48E00C0C4D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA75473726BFCE2300C0C4D9 /* PDF */,
 				FA75472F26BEFB1600C0C4D9 /* Maps */,
 				FA75471326BED65E00C0C4D9 /* BackButton */,
 				FA75470C26BED33700C0C4D9 /* Menue */,
@@ -473,6 +476,14 @@
 				FA75473526BF023700C0C4D9 /* LocationManager.swift */,
 			);
 			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		FA75473726BFCE2300C0C4D9 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				FA75473826BFCE3100C0C4D9 /* PDFKitRepresentedView.swift */,
+			);
+			path = PDF;
 			sourceTree = "<group>";
 		};
 		FCCBC81C0D5D6188833D6D66 /* Frameworks */ = {
@@ -794,6 +805,7 @@
 				FA75470126BEC63B00C0C4D9 /* StringFunc.swift in Sources */,
 				FA7546E726BEAC5500C0C4D9 /* OnboardingViewThree.swift in Sources */,
 				FA75471526BED66F00C0C4D9 /* BackButton.swift in Sources */,
+				FA75473926BFCE3100C0C4D9 /* PDFKitRepresentedView.swift in Sources */,
 				FA75473326BF00CE00C0C4D9 /* Mapview.swift in Sources */,
 				FA75472826BEE5F700C0C4D9 /* ImageLoader.swift in Sources */,
 				FA75471B26BEE1AF00C0C4D9 /* PlanetDetails.swift in Sources */,

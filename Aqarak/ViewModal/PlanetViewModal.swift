@@ -13,29 +13,33 @@ struct PlanetViewModal: View {
     var body: some View {
 //        Button(action: {}, label: {
             VStack{
-//                Spacer()
-//                Image( ?? "logo_1")
-//                RemoteImage(url: getImage(img:section.image! ?? "logo_1")  )
-//                RemoteImage(url: getImage(img:)  )
+                ZStack(alignment:.bottom){
                 AsyncImage(
                     url: URL(string://AppImageBase+section.imageURL)!,
-                                getImage(img: ""))!,
-                                    placeholder: { Image("logo_1")},
+                                getImage(img: section.imageURL))!,
+                                    placeholder: { Image("AppLogo")},
                                     image: { Image(uiImage: $0).resizable() }
                                  )
-//                        .resizable()
                         .frame(width: 165, height: 150)
                     .aspectRatio(contentMode: .fit)
                     
                     
-                
-//                Spacer()
-//Spacer()
                 Text(section.name)
-                    .foregroundColor(.AppPrimaryColor)
-                    .padding(.vertical,5)
-                Spacer()
-            }.frame(width: 179, height: 261)
+                    .font(.custom(Fount_name.b.rawValue, size: 16))
+                    .foregroundColor(.AppFount)
+                    .padding(.vertical,5).frame(width:  179, height: 50, alignment: .center)
+                    .background(Color.gray.opacity(0.83))
+                }
+                VStack{
+                    Text("تفاصيل عن المنتج وما يحتويه كالموقع الجغرافي المميز وماتحيط به من اماكن سياحية او معالم بارزة او اي شي اخر يمكن ان يشكل رغبة قوية للمخطط السكني")
+                        .font(.custom(Fount_name.l.rawValue, size: 10))
+                        .multilineTextAlignment(.trailing)
+
+                        .frame(maxWidth: 179)
+                        .foregroundColor(.AppGrayFount)
+                        .padding(5)
+                }.background(Color.white)
+            }.frame(width: 179)
 //        })
             
             

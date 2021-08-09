@@ -45,6 +45,12 @@ struct SignIn: View {
                     .modifier(customFountCR())
                     .foregroundColor(.AppGrayFount)
                     .keyboardType(.phonePad)
+                    .overlay(
+                        HStack{
+                            Spacer()
+                            Image(systemName: "candybarphone").frame(width: 40, height: 30, alignment: .center).padding(.horizontal,10)
+                        }
+                    )
 
             }.padding(.top,30)
             

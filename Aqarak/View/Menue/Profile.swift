@@ -45,12 +45,17 @@ struct Profile: View {
 //                    .modifier(customFountCR())
 //                    .foregroundColor(.AppGrayFount)
 //                    .keyboardType(.phonePad)
-                TextField("", text: $emailAddress)
+                TextField("abc@abc.com", text: $emailAddress)
                     .textFieldStyle(CTFStyleClearBackground(width: 320, cornerRadius: 20, height: 50, showError: $emailAddressError))
                                         .modifier(customFountCR())
                                         .foregroundColor(.AppGrayFount)
                                         .keyboardType(.emailAddress)
-            
+                    .overlay(
+                        HStack{
+                            Spacer()
+                            Image(systemName: "envelope.fill").frame(width: 40, height: 30, alignment: .center).padding(.horizontal,10)
+                        }
+                    )
             Text("تعديل رقم الهاتف")
                 .font(.custom(Fount_name.l.rawValue, size: 14))
                 TextField("05xxxxxxxx", text: $textBindingManager.text, onEditingChanged: onEditingChanged(_:), onCommit: onCommit)
@@ -58,7 +63,12 @@ struct Profile: View {
                     .modifier(customFountCR())
                     .foregroundColor(.AppGrayFount)
                     .keyboardType(.phonePad)
-                
+                    .overlay(
+                        HStack{
+                            Spacer()
+                            Image(systemName: "candybarphone").frame(width: 40, height: 30, alignment: .center).padding(.horizontal,10)
+                        }
+                    )
                 Button(action: {
                     if FormValidation(){
     //                checkUserSignIn()

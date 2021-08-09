@@ -8,44 +8,34 @@ import Foundation
 import SwiftUI
 
 import GoogleMaps
-var  latitude=0.0
-var  longitude=0.0
 var mapView = GMSMapView()
 var marker = GMSMarker()
     struct GoogleMapsView: UIViewRepresentable {
         // 1
-        @State         var shop_log:Double
-        @State  var shop_lat:Double
+        @State         var longitude:Double
+        @State  var latitude:Double
+        var location_drow = [[24.760861,46.761074],[24.758121,46.755747],[24.746208,46.753554],[24.745750,46.756193],[24.746208,46.758050]]
            @ObservedObject var locationManager = LocationManager()
-           private let zoom: Float = 14.0
+           private let zoom: Float = 15.0
         let marker2 = GMSMarker()
            // 2
            func makeUIView(context: Self.Context) -> GMSMapView {
-               let camera = GMSCameraPosition.camera(withLatitude: shop_lat, longitude: shop_log, zoom: zoom)
-             mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-//            let configuration = UIImage.SymbolConfiguration(pointSize: 1)
-//            var image = UIImage(named:"restaurant", in: .none, with: configuration)
-//            marker.icon = self.imageWithImage(image: image!, scaledToSize: CGSize(width: 50.0, height: 50.0))
-            
-//            marker.position = CLLocationCoordinate2D(latitude:  shop_lat, longitude:shop_log)
-            
-//                marker.map = mapView
-            
-            
-//            let configuration = UIImage.SymbolConfiguration(pointSize: 1)
-            
-//             image = UIImage(named:"customer", in: .none, with: configuration)
-////            marker2.icon=image
-//            marker2.icon = self.imageWithImage(image: image!, scaledToSize: CGSize(width: 50.0, height: 50.0))
-//            marker2.position = CLLocationCoordinate2D(latitude:  latitude, longitude:longitude)
-//            marker2.map = mapView
-               return mapView
+               let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: zoom)
+                mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+                let rectanglePath = GMSMutablePath()
+                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[4][0], longitude: location_drow[4][1]))
+                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[0][0], longitude: location_drow[0][1]))
+                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[1][0], longitude: location_drow[1][1]))
+                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[2][0], longitude: location_drow[2][1]))
+                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[3][0], longitude: location_drow[3][1]))
+                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[4][0], longitude: location_drow[4][1]))
+                let rectangle = GMSPolyline(path: rectanglePath)
+                rectangle.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                rectangle.map = mapView
+                return mapView
            }
-           // 3
+           
            func updateUIView(_ mapView: GMSMapView, context: Context) {
-//            let bounds = GMSCoordinateBounds(coordinate: marker2.position, coordinate: marker.position)
-//            let camera: GMSCameraUpdate = GMSCameraUpdate.fit(bounds)
-//            mapView.animate(with: camera)
            }
         func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
             UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)

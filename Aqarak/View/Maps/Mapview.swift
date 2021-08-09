@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct Mapview: View {
+    var longitude = 24.754383
+    var latitude = 46.757459
     var body: some View {
+        
         VStack(){
         HStack{
             Image("AppLogo").resizable().frame(width: 40, height: 40)
@@ -18,7 +21,7 @@ struct Mapview: View {
             BackButton().frame(width: 40, height: 40)
         }.padding(.horizontal,20)
             
-            GoogleMapsView(shop_log:21.3996239, shop_lat:39.7858474)//.frame(width: 314, height: 164).cornerRadius(20)
+            GoogleMapsView(longitude: latitude, latitude: longitude).cornerRadius(20)
         }
     }
 }
