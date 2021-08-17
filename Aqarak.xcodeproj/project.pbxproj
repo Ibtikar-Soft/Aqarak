@@ -10,6 +10,7 @@
 		3F94ADEF392CEA5B00C3680D /* Pods_AqarakTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53EDA6D5174D7E8C428D3384 /* Pods_AqarakTests.framework */; };
 		42B8E1E94DD4905F56A81F03 /* Pods_Aqarak_AqarakUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F734035B456D5D22D11143 /* Pods_Aqarak_AqarakUITests.framework */; };
 		75B42AA43A41201B006FBC3D /* Pods_Aqarak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB873C05B0C828008E2C4296 /* Pods_Aqarak.framework */; };
+		FA27594B26C934C5002C2F7A /* screenEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27594A26C934C5002C2F7A /* screenEx.swift */; };
 		FA7546A326BEA1AE00C0C4D9 /* AqarakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546A226BEA1AE00C0C4D9 /* AqarakApp.swift */; };
 		FA7546A526BEA1AE00C0C4D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7546A426BEA1AE00C0C4D9 /* ContentView.swift */; };
 		FA7546A726BEA1AF00C0C4D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7546A626BEA1AF00C0C4D9 /* Assets.xcassets */; };
@@ -58,6 +59,8 @@
 		FA75473326BF00CE00C0C4D9 /* Mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75473226BF00CE00C0C4D9 /* Mapview.swift */; };
 		FA75473626BF023700C0C4D9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75473526BF023700C0C4D9 /* LocationManager.swift */; };
 		FA75473926BFCE3100C0C4D9 /* PDFKitRepresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75473826BFCE3100C0C4D9 /* PDFKitRepresentedView.swift */; };
+		FAAD417826C91CB100FEC193 /* SearchMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD417726C91CB100FEC193 /* SearchMap.swift */; };
+		FAAD417A26C91DDC00FEC193 /* SearchMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD417926C91DDC00FEC193 /* SearchMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,7 @@
 		AB873C05B0C828008E2C4296 /* Pods_Aqarak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aqarak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC52670D885D405B8E24311 /* Pods-AqarakTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AqarakTests.debug.xcconfig"; path = "Target Support Files/Pods-AqarakTests/Pods-AqarakTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB7EC3FCB579CC8041C6DF79 /* Pods-Aqarak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aqarak.release.xcconfig"; path = "Target Support Files/Pods-Aqarak/Pods-Aqarak.release.xcconfig"; sourceTree = "<group>"; };
+		FA27594A26C934C5002C2F7A /* screenEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenEx.swift; sourceTree = "<group>"; };
 		FA75469F26BEA1AE00C0C4D9 /* Aqarak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aqarak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7546A226BEA1AE00C0C4D9 /* AqarakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqarakApp.swift; sourceTree = "<group>"; };
 		FA7546A426BEA1AE00C0C4D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 		FA75473226BF00CE00C0C4D9 /* Mapview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapview.swift; sourceTree = "<group>"; };
 		FA75473526BF023700C0C4D9 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FA75473826BFCE3100C0C4D9 /* PDFKitRepresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitRepresentedView.swift; sourceTree = "<group>"; };
+		FAAD417726C91CB100FEC193 /* SearchMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMap.swift; sourceTree = "<group>"; };
+		FAAD417926C91DDC00FEC193 /* SearchMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,14 @@
 				8E41E33622A1A5A3ADE23060 /* Pods-AqarakTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA27594926C934B0002C2F7A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FA27594A26C934C5002C2F7A /* screenEx.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		FA75469626BEA1AE00C0C4D9 = {
@@ -319,6 +333,7 @@
 		FA7546DF26BEA89800C0C4D9 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
+				FA27594926C934B0002C2F7A /* Screen */,
 				FA7546FA26BEBF1900C0C4D9 /* TextBinding */,
 				FA7546F726BEBE5B00C0C4D9 /* Fount */,
 				FA7546F226BEB71800C0C4D9 /* Color */,
@@ -464,6 +479,7 @@
 		FA75472F26BEFB1600C0C4D9 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				FAAD417626C91C9200FEC193 /* SearchMap */,
 				FA75473026BEFC7800C0C4D9 /* GoogleMapsView.swift */,
 				FA75473226BF00CE00C0C4D9 /* Mapview.swift */,
 			);
@@ -484,6 +500,15 @@
 				FA75473826BFCE3100C0C4D9 /* PDFKitRepresentedView.swift */,
 			);
 			path = PDF;
+			sourceTree = "<group>";
+		};
+		FAAD417626C91C9200FEC193 /* SearchMap */ = {
+			isa = PBXGroup;
+			children = (
+				FAAD417726C91CB100FEC193 /* SearchMap.swift */,
+				FAAD417926C91DDC00FEC193 /* SearchMapView.swift */,
+			);
+			path = SearchMap;
 			sourceTree = "<group>";
 		};
 		FCCBC81C0D5D6188833D6D66 /* Frameworks */ = {
@@ -772,6 +797,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA7546D326BEA51900C0C4D9 /* VarUserDefault.swift in Sources */,
+				FA27594B26C934C5002C2F7A /* screenEx.swift in Sources */,
 				FA75470E26BED35B00C0C4D9 /* About.swift in Sources */,
 				FA7546F926BEBE6C00C0C4D9 /* FountEx.swift in Sources */,
 				FA75471926BEE1A000C0C4D9 /* PlanetProduct.swift in Sources */,
@@ -807,10 +833,12 @@
 				FA75471526BED66F00C0C4D9 /* BackButton.swift in Sources */,
 				FA75473926BFCE3100C0C4D9 /* PDFKitRepresentedView.swift in Sources */,
 				FA75473326BF00CE00C0C4D9 /* Mapview.swift in Sources */,
+				FAAD417826C91CB100FEC193 /* SearchMap.swift in Sources */,
 				FA75472826BEE5F700C0C4D9 /* ImageLoader.swift in Sources */,
 				FA75471B26BEE1AF00C0C4D9 /* PlanetDetails.swift in Sources */,
 				FA75472126BEE31900C0C4D9 /* PlanetViewModal.swift in Sources */,
 				FA7546E326BEA8DB00C0C4D9 /* keyboardEx.swift in Sources */,
+				FAAD417A26C91DDC00FEC193 /* SearchMapView.swift in Sources */,
 				FA75470926BECBA200C0C4D9 /* Menue_Button.swift in Sources */,
 				FA7546A326BEA1AE00C0C4D9 /* AqarakApp.swift in Sources */,
 			);
@@ -972,7 +1000,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Aqarak/Preview Content\"";
-				DEVELOPMENT_TEAM = 5356BACHNF;
+				DEVELOPMENT_TEAM = 46278RZ58D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Aqarak/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -980,7 +1008,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibtikar.Aqarak;
+				PRODUCT_BUNDLE_IDENTIFIER = ibtekar.Aqarak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -995,7 +1023,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Aqarak/Preview Content\"";
-				DEVELOPMENT_TEAM = 5356BACHNF;
+				DEVELOPMENT_TEAM = 46278RZ58D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Aqarak/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1003,7 +1031,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibtikar.Aqarak;
+				PRODUCT_BUNDLE_IDENTIFIER = ibtekar.Aqarak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

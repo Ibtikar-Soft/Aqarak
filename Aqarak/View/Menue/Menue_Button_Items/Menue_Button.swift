@@ -46,6 +46,7 @@ struct TestButton: View {
                     .animation(.spring(response: 0.1, dampingFraction: 0.5, blendDuration: 0))
             }.padding(0)//.background(Color.AppPrimaryColor).mask(Circle()).shadow(color:Color.AppPrimaryColor, radius: 3)
             .zIndex(10)
+            
             MenueButtons(open: $open, viewToOpen: $isViewPro, delay: 0.2 ,offsetX: offsetX, offsetY:offsetY, icon: menue_button_name.Profile.rawValue, color: Color.green)
             
             
@@ -53,7 +54,6 @@ struct TestButton: View {
             
             
             MenueButtons(open: $open, viewToOpen: $isViewAbout, delay: 0.6,offsetX: offsetX*3, offsetY:offsetY, icon: menue_button_name.About.rawValue, color: Color.yellow)
-
         }
             
         }

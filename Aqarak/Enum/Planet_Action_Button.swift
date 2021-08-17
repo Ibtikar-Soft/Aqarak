@@ -8,6 +8,7 @@
 import Foundation
 enum Planet_Action_Button : String {
     case heart = "heart"
+    case redheart = "redheart"
     case maps = "maps"
     case share = "share"
 }

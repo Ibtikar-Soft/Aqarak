@@ -14,8 +14,8 @@ struct ContentView: View {
     var body: some View {
         var longitude = 24.754383
         var latitude = 46.757459
-        GoogleMapsView(longitude: latitude, latitude: longitude).cornerRadius(20)
-//       Splash()
+//        GoogleMapsView(longitude: latitude, latitude: longitude).cornerRadius(20)
+       Splash()
 //        SignIn()
 //        TestButton()
 //        if isValidEmailAddress(emailAddressString: "awad619@hotmail.com"){

@@ -15,8 +15,8 @@ struct PlanetViewModal: View {
             VStack{
                 ZStack(alignment:.bottom){
                 AsyncImage(
-                    url: URL(string://AppImageBase+section.imageURL)!,
-                                getImage(img: section.imageURL))!,
+                    url: URL(string:AppImageBase+section.image)!,
+//                                getImage(img: section.image))!,
                                     placeholder: { Image("AppLogo")},
                                     image: { Image(uiImage: $0).resizable() }
                                  )
@@ -31,7 +31,7 @@ struct PlanetViewModal: View {
                     .background(Color.gray.opacity(0.83))
                 }
                 VStack{
-                    Text("تفاصيل عن المنتج وما يحتويه كالموقع الجغرافي المميز وماتحيط به من اماكن سياحية او معالم بارزة او اي شي اخر يمكن ان يشكل رغبة قوية للمخطط السكني")
+                    Text(section.description)
                         .font(.custom(Fount_name.l.rawValue, size: 10))
                         .multilineTextAlignment(.trailing)
 

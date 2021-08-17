@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct Mapview: View {
-    var longitude = 24.754383
-    var latitude = 46.757459
+    @State  var longitude:Double
+    @State var latitude:Double
+    @State var location_drow:[[Double]]
     var body: some View {
         
         VStack(){
@@ -21,7 +22,9 @@ struct Mapview: View {
             BackButton().frame(width: 40, height: 40)
         }.padding(.horizontal,20)
             
-            GoogleMapsView(longitude: latitude, latitude: longitude).cornerRadius(20)
+//            GoogleMapsView(longitude: latitude, latitude: longitude)
+            SearchMap(longitude: longitude, latitude: latitude ,location_drow: location_drow)
+                .frame(width: UIScreen.width*0.8, alignment: .center).cornerRadius(20)
         }
     }
 }

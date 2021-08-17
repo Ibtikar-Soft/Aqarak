@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import SwiftyJSON
 struct Profile: View {
     @State var emailAddress = ""
     @State var emailAddressError = false
@@ -72,6 +72,7 @@ struct Profile: View {
                 Button(action: {
                     if FormValidation(){
     //                checkUserSignIn()
+                        UpdateCustomer()
 //                        isSignInPressed=true
                     }
                 }, label: {
@@ -103,9 +104,32 @@ struct Profile: View {
         }
         
     }
+//    {"Id" : "1", "" : "Ayman", "PhoneNo" : "+966566373972"}
+    func UpdateCustomer(){
+        let prams = ["PhoneNo": "0"+StringFunction().numberStrToEnglish(numberStr: self.textBindingManager.text), "Name" : emailAddress,"Id":"\(VarUserDefault.SysGlobalData.getGlobalInt(key: VarUserDefault.SysGlobalData.user_id))"]
+    print(Connection().getUrl(word: "UpdateCustomer"))
+        print(prams)
+    RestAPI().deleteData(endUrl: Connection().getUrl(word: "UpdateCustomer"), parameters:prams ) { result in
+        
+        let sectionR = JSON(result!)
+        print(sectionR)
+        if sectionR["responseCode"].int == 200{
+            let jsonDatas = try! JSONEncoder().encode(sectionR["response"])
+            let menus = try! JSONDecoder().decode([plantModal].self, from: jsonDatas)
+//            menue=menus
+//            getFav()
+//            print(menue)
+            message = "تم التعديل بنجاح"
+            showsAlert=true
+        }
+    } onError: { error in
+        print(error!)
+    }
+    
+}
     func FormValidation() -> Bool {
         self.phoneNumberError = (self.textBindingManager.text.isEmpty || self.textBindingManager.text.count != 10 || !self.textBindingManager.text.hasPrefix("05")) ? true : false
-        emailAddressError = !isValidEmailAddress(emailAddressString: emailAddress)
+        emailAddressError =  !isValidEmailAddress(emailAddressString: emailAddress)
         if phoneNumberError{
             message="خطاء في رقم الجوال"
             showsAlert=true

@@ -16,23 +16,26 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>fetch</string>
+    </array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>الرجاء السماح للتطبيق بالوصول الى الموقع للإستفادة من خدمات التطبيق</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Cairo-Black.ttf</string>
+		<string>Cairo-Light.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<true/>
 	</dict>
-    <key>UIAppFonts</key>
-    <array>
-        <string>Cairo-Black.ttf</string>
-        <string>Cairo-Light.ttf</string>
-        
-    </array>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>الرجاء السماح للتطبيق بالوصول الى الموقع للإستفادة من خدمات التطبيق</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchScreen</key>

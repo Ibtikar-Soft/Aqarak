@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FaveorateViewModal: View {
     
-    var section:plantModal=plantModal(id: 2, name: "dsadsa", imageURL: "", typeID: 2, createAt: "sa")
+    var section:plantModal=plantModal(id: 2, name: "", image: "", description: "", coordinations: "", planPieces: [])
 //     var animation:Namespace.ID
     var body: some View {
 //        Button(action: {}, label: {
@@ -24,6 +24,9 @@ struct FaveorateViewModal: View {
                 VStack(alignment: .center, spacing: 0){
                     HStack{
                         Image("Close").resizable().frame(width: 20, height: 20, alignment: .center).offset( x:10, y: -10)
+                            .onTapGesture {
+                                DeleteIteam(id:section.id)
+                            }
                         Spacer()
                         Text(section.name)
                             .font(.custom(Fount_name.l.rawValue, size: 14))
@@ -31,7 +34,7 @@ struct FaveorateViewModal: View {
                             .foregroundColor(.black)
                         
                     }.padding(.top,8)
-                    Text("سجل دخولك الى عقارك وتمتع بافضل واسهل وارخص الخدمات")
+                    Text(section.description)
                         .font(.custom(Fount_name.l.rawValue, size: 14))
                         .multilineTextAlignment(.trailing)
                         .foregroundColor(.AppGrayFount)
@@ -43,8 +46,8 @@ struct FaveorateViewModal: View {
                 
                 Spacer()
                 AsyncImage(
-                    url: URL(string://AppImageBase+section.imageURL)!,
-                                getImage(img: ""))!,
+                    url: URL(string:AppImageBase+section.image)!,
+//                                getImage(img: AppImageBase+section.image))!,
                                     placeholder: { Image("AppLogo")},
                                     image: { Image(uiImage: $0).resizable() }
                                  )
@@ -65,6 +68,9 @@ struct FaveorateViewModal: View {
         }
 
         return img
+    }
+    func DeleteIteam(id:Int){
+        
     }
 }
 

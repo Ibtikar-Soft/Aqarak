@@ -6,14 +6,11 @@
 //
 
 import SwiftUI
-
+import SwiftyJSON
 struct Fav: View {
     @State var menue:[plantModal]=[
-        plantModal(id: 1, name: "ds", imageURL: "", typeID: 2, createAt: "ds"),
-        plantModal(id: 2, name: "ds", imageURL: "", typeID: 2, createAt: "ds"),
-        plantModal(id: 3, name: "ds", imageURL: "", typeID: 2, createAt: "ds"),
-        plantModal(id: 4, name: "ds", imageURL: "", typeID: 2, createAt: "ds"),
-        plantModal(id: 5, name: "ds", imageURL: "", typeID: 2, createAt: "ds"),
+//        plantModal(id: 2, name: "", image: "", description: "", coordinations: "", planPieces: [planPieces(id: 1, pieceNo: "", coordination: "")])
+        
     ]
     var body: some View {
         
@@ -38,7 +35,43 @@ struct Fav: View {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(),spacing: 10), count: 1), spacing: 10) {
                     ForEach(menue){
                         section in
-                        FaveorateViewModal(section: section)
+                        HStack{
+                                
+                            VStack(alignment: .center, spacing: 0){
+                                HStack{
+                                    Image("Close").resizable().frame(width: 20, height: 20, alignment: .center).offset( x:10, y: -10)
+                                        .onTapGesture {
+                                            deleteFav(id:"\(section.id)")
+                                        }
+                                    Spacer()
+                                    Text(section.name)
+                                        .font(.custom(Fount_name.l.rawValue, size: 14))
+                                        .multilineTextAlignment(.trailing)
+                                        .foregroundColor(.black)
+                                    
+                                }.padding(.top,8)
+                                Text(section.description)
+                                    .font(.custom(Fount_name.l.rawValue, size: 14))
+                                    .multilineTextAlignment(.trailing)
+                                    .foregroundColor(.AppGrayFount)
+                                    .shadow(color: Color.black.opacity(0.1), radius: 1, x: 2, y: 2)
+                                Spacer()
+                            }
+            //                Spacer()
+            //Spacer()
+                            
+                            Spacer()
+                            AsyncImage(
+                                url: URL(string:AppImageBase+section.image)!,
+            //                                getImage(img: AppImageBase+section.image))!,
+                                                placeholder: { Image("AppLogo")},
+                                                image: { Image(uiImage: $0).resizable() }
+                                             )
+            //                        .resizable()
+                                    .frame(width: 115, height: 145)
+                                .aspectRatio(contentMode: .fit)
+                        }.frame(width: 350, height: 145)
+
                             .cornerRadius(20)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
@@ -58,8 +91,77 @@ struct Fav: View {
                 }.padding(.top,20)
             }
             Spacer()
+        }.onAppear{
+//            VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.Favorate, Val: "")
+            getFav()
         }
     }
+    func deleteFav(id:String){
+    print(Connection().getUrl(word: "DeleteFavor")+id)
+    RestAPI().postData(endUrl: Connection().getUrl(word: "DeleteFavor")+id, parameters: [:]) { result in
+        
+        let sectionR = JSON(result!)
+        print(sectionR)
+        if sectionR["responseCode"].int == 200{
+            let jsonDatas = try! JSONEncoder().encode(sectionR["response"])
+            let menus = try! JSONDecoder().decode([plantModal].self, from: jsonDatas)
+//            menue=menus
+            getFav()
+            removeTHis(id:id)
+//            print(menue)
+        }
+        else if sectionR["responseCode"].int == 410{
+            
+        }
+    } onError: { error in
+        print(error!)
+    }
+    
+}
+    func removeTHis(id:String){
+        
+        if VarUserDefault.SysGlobalData.getGlobalInt(key: VarUserDefault.SysGlobalData.user_id) > 0{
+                ////
+              let nn=VarUserDefault.SysGlobalData.getGlobal(key: VarUserDefault.SysGlobalData.Favorate)
+            VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.Favorate, Val: "")
+            var sd=""//nn+"#\(id.id)#,"
+              var useFav=nn.components(separatedBy:",")
+              var faveIndex=0
+              if useFav.count>0{
+                  for iteam in 0...useFav.count-1{
+                    if "#\(id)#" != useFav[iteam] {
+                        var sd=sd+"#\(useFav[iteam])#,"
+                      }
+                  }
+              }
+//              if(!minato){
+                
+                VarUserDefault.SysGlobalData.setGlobal(Key: "Favorate", Val: sd)
+                print(VarUserDefault.SysGlobalData.getGlobal(key:VarUserDefault.SysGlobalData.Favorate))
+//                addToFavorate(plan_id:id.id)
+//              }
+            }
+
+        
+    }
+    func getFav(){
+        
+    print(Connection().getUrl(word: "GetFavor"))
+    RestAPI().getData(endUrl: Connection().getUrl(word: "GetFavor"), parameters: [:]) { result in
+        
+        let sectionR = JSON(result!)
+        print(sectionR)
+        if sectionR["responseCode"].int == 200{
+            let jsonDatas = try! JSONEncoder().encode(sectionR["response"])
+            let menus = try! JSONDecoder().decode([plantModal].self, from: jsonDatas)
+            menue=menus
+            print(menue)
+        }
+    } onError: { error in
+        print(error!)
+    }
+    
+}
 }
 
 

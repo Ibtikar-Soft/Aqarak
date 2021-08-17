@@ -7,23 +7,40 @@
 
 import Foundation
 
-let AppBase="https://kayanapp.ibtikar-soft.sa"
-let AppImageBase="https://kayanapp.ibtikar-soft.sa/api/"
+let AppBase="https://aaqarkapi.ibtikar-soft.com"
+let AppImageBase="https://aaqark.ibtikar-soft.com/"
+//App/
 class Connection:NSData
 {
     
-     let baseUrl=AppBase+"/api/"
+     let baseUrl=AppBase+"/api/App/"
     
     func  getUrl(word:String) -> String{
         var link:String =    ""
         switch word {
         // Auth
-        case "register":
-            link = baseUrl+"Customer/CreateNew"
-            break
         case "login":
-            link = baseUrl+"Customer/Login"
+            link = baseUrl+"Login"
             break
+        case "GetPlans":
+            link = baseUrl+"GetPlans"
+            break
+        case "AddFavor":
+            link = baseUrl+"AddFavor"
+            break
+        case "GetFavor":
+            link = baseUrl+"GetFavor/\(VarUserDefault.SysGlobalData.getGlobalInt(key: VarUserDefault.SysGlobalData.user_id))"
+            break
+        case "DeleteFavor":
+            link = baseUrl+"DeleteFavor/\(VarUserDefault.SysGlobalData.getGlobalInt(key: VarUserDefault.SysGlobalData.user_id))/"
+            break
+        case "UpdateCustomer":
+            link = baseUrl+"UpdateCustomer"
+            break
+            
+            
+            
+            
         default:
             break
         }

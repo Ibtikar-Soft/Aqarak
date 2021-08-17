@@ -11,6 +11,10 @@ class VarUserDefault{
   
     var isLogin: String = "isLogin"
    var isFirestOpen:String = "isFirestOpen"
+    var user_id:String = "user_id"
+    var Favorate:String = "Favorate"
+    
+    
     //auth
     
     func getGlobal(key:String) -> String{

@@ -11,11 +11,11 @@ struct Splash: View {
      var isFirestOpen: Bool =  VarUserDefault.SysGlobalData.getGlobalBool(key: VarUserDefault.SysGlobalData.isFirestOpen)
     var isLogin: Bool =  VarUserDefault.SysGlobalData.getGlobalBool(key: VarUserDefault.SysGlobalData.isLogin)
     @State var logo_key=0
-     var uAnimationDuration: Double { return 0.4 }
+     var uAnimationDuration: Double { return 3.4 }
     var body: some View {
         ZStack{
         if logo_key == 0{
-            Image("AppLogo").resizable().frame(width: 400, height: 400, alignment: .center).onAppear{
+            Image("AppLogo").resizable().frame(width: 250, height: 175, alignment: .center).onAppear{
                 restartAnimation()
             }
         }
@@ -25,16 +25,7 @@ struct Splash: View {
             }
              else{
             if !isLogin{
-                
                 SignIn()
-    //                .background(Color.red)
-                    
-    //                /.edgesIgnoringSafeArea(.all)
-                    .onTapGesture {
-                    self.hideKeyboard()
-        //
-                  }.edgesIgnoringSafeArea(.all)
-    //                Color.blue.edgesIgnoringSafeArea(.all)
                 
             }
             else{

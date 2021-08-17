@@ -43,6 +43,24 @@ public class RestAPI {
         }
     }
     
+    open func deleteData(endUrl: String,parameters: Parameters, onCompletion: ((Any?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
+        
+        let headers:HTTPHeaders = [
+            :
+        ]
+        
+        AF.request(endUrl, method: .delete, parameters: parameters, encoding: JSONEncoding.default,headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let result):
+                let json = JSON(result)
+                onCompletion?(json)
+            case .failure(let err):
+                print("\(err.localizedDescription)")
+                 print("\(err)")
+                onError?(err)
+            }
+        }
+    }
     open func postData(endUrl: String,parameters: Parameters, onCompletion: ((Any?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
         
         let headers:HTTPHeaders = [

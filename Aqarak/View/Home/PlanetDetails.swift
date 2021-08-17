@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
-
+import SwiftyJSON
 struct PlanetDetails: View {
+    @State var emailAddressError = false
+    @State var latitude_longitude_change = false
+    
     @State var data : Data?
    @Binding var id:plantModal
     @State var search_text = ""
@@ -21,6 +24,10 @@ struct PlanetDetails: View {
     @State var changeViewMode:Bool=false
     
     @State var isShareViewRepresentesd:Bool=false
+    @State var plan_number:String=""
+    
+    @State var longitude = 24.754383
+    @State var latitude = 46.757459
     var body: some View {
         ZStack{
         VStack{
@@ -40,11 +47,60 @@ struct PlanetDetails: View {
 //                             )
 //            ZStack{
 //                if changeViewMode{
-            Image("Rectangle").resizable()
+            VStack(spacing:5){
+            HStack(spacing:0){
+
+                TextField("", text: $plan_number)
+                    .textFieldStyle(CTFStyleClearBackground(width: UIScreen.width*0.8, cornerRadius: 20, height: 50, showError: $emailAddressError))
+                                        .modifier(customFountCR())
+                                        .foregroundColor(.AppGrayFount)
+                                        .keyboardType(.numberPad)
+//                    .overlay(
+//
+//                    )
+                
+                                   
+                Image(systemName: "magnifyingglass.circle.fill").resizable().foregroundColor(.AppFount).frame(width: 30, height: 30, alignment: .center).onTapGesture {
+                        if gitPlanCordination(plan_id: plan_number){
+                                                latitude_longitude_change.toggle()
+                        }
+                }.offset(x: -40)
+                
+                
+//                HStack{
+//                    Spacer()
+//                    Button {
+//                        longitude+=20
+////                        latitude_longitude_change.toggle()
+//                    } label: {
+//
+//                    }
+//                    .padding(.horizontal,10)
+//                }
+            }
+//
+//            }.frame(width: UIScreen.width*0.8, height: 40, alignment: .center)
+                
+//                SearchMapView(longitude: $latitude, latitude: $longitude)
+                if latitude_longitude_change{
+                    SearchMap(longitude: longitude, latitude: latitude, location_drow: id.cord)
+                        
+                        .frame(width: UIScreen.width*0.8, alignment: .center)
+                        .cornerRadius(20).onTapGesture {
+                                hideKeyboard()
+                            }
+                }else{
+                    SearchMap(longitude: longitude, latitude: latitude ,location_drow: id.cord)
+                        .frame(width: UIScreen.width*0.8, alignment: .center).onTapGesture {
+                    hideKeyboard()
+                }
+                    .cornerRadius(20)
+                }
 //                .onLongPressGesture {
 //                    changeViewMode.toggle()
 //                }
-                .padding(20)
+            }
+            .padding(20)
 //
 //                }
 //                else{
@@ -63,7 +119,9 @@ struct PlanetDetails: View {
 //            }
 //            Spacer()
             HStack{
-                Image(Planet_Action_Button.heart.rawValue).resizable().frame(width: 50, height: 50, alignment: .center).onTapGesture {
+                Image(id.inInLocalFav ? Planet_Action_Button.redheart.rawValue : Planet_Action_Button.heart.rawValue).resizable().frame(width: 50, height: 50, alignment: .center).onTapGesture {
+                    addToLocalFav()
+//                    addToFavorate(plan_id:id.id)
                 }
                 Spacer()
                 Image(Planet_Action_Button.maps.rawValue).resizable().frame(width: 50, height: 50, alignment: .center).onTapGesture {
@@ -82,15 +140,112 @@ struct PlanetDetails: View {
             
         }.onAppear{
             print(id)
+            print(id.inInLocalFav)
+            print(id.cord[0][1])
+            longitude = id.cord[0][0]
+                latitude = id.cord[0][1]
         }
-        .onTapGesture {
-            hideKeyboard()
+        .alert(isPresented: self.$showsAlert) {
+            Alert(title: Text(message).font(.custom(Fount_name.b.rawValue, size: 16)) )
         }
         .fullScreenCover(isPresented:$isGoToMap, content: {
-            Mapview()
+            Mapview(longitude: longitude, latitude: latitude, location_drow: id.cord)
+            
         })
+        }.onTapGesture {
+            hideKeyboard()
         }
-       
+    }
+    func addToFavorate(plan_id:Int){
+        
+        let prams = ["CustomerID" : VarUserDefault.SysGlobalData.getGlobalInt(key: VarUserDefault.SysGlobalData.user_id), "PlanID" : plan_id]
+        RestAPI().postData(endUrl: Connection().getUrl(word: "AddFavor"), parameters: prams) { result in
+//            showSandalLoadingIndicater=false
+           let sectionR = JSON(result!)
+            print(Connection().getUrl(word: "login"))
+                  print(prams)
+            print(sectionR)
+         
+            if sectionR["responseCode"].int == 200{
+                message = "تمت  الاضافة الى المفضلة"
+                showsAlert=true
+                addToLocalFav()
+            }
+            else if sectionR["responseCode"].int == 405{ // user not active
+//                displayItem=1
+//                reSendVerification()
+            }
+            else if sectionR["responseCode"].int == 404{//user not found
+//                message = " هذا المستخدم غير موجود"
+//                showsAlert=true
+            }
+            else if sectionR["responseCode"].int == 406{//user not found
+//                message = "خطاء في بيانات الحساب"
+//                showsAlert=true
+            }
+            else{
+                message = sectionR["responseMasg"].stringValue
+                showsAlert=true
+            }
+            
+        } onError: { error in
+            print(error)
+//            showSandalLoadingIndicater=false
+        }
+
+        
+    }
+    func addToLocalFav(){
+        
+        if VarUserDefault.SysGlobalData.getGlobalInt(key: VarUserDefault.SysGlobalData.user_id) > 0{
+                ////
+                var minato=false
+              var nn=VarUserDefault.SysGlobalData.getGlobal(key: VarUserDefault.SysGlobalData.Favorate)
+              var useFav=nn.components(separatedBy:",")
+              var faveIndex=0
+              if useFav.count>0{
+                  for iteam in 0...useFav.count-1{
+                    if "#\(id.id)#" == useFav[iteam] {
+                          faveIndex=iteam
+                          minato=true
+                            message="هذا العنصر موجود مسبقا"
+                            showsAlert=true
+                          break
+                      }
+                  }
+              }
+              if(!minato){
+                var sd=nn+"#\(id.id)#,"
+                VarUserDefault.SysGlobalData.setGlobal(Key: "Favorate", Val: sd)
+                print(VarUserDefault.SysGlobalData.getGlobal(key:VarUserDefault.SysGlobalData.Favorate))
+                addToFavorate(plan_id:id.id)
+              }
+            }
+            else{
+//                // to Login
+            }
+        
+    //
+    }
+    func gitPlanCordination(plan_id:String) -> Bool {
+        
+        for pieces in id.planPieces
+        {
+            if plan_id == pieces.pieceNo {
+                
+                longitude = pieces.plan_coordination.coordinate.latitude
+                latitude =  pieces.plan_coordination.coordinate.longitude
+                print("item found")
+                
+                return true
+                
+            }
+            
+        }
+        print("item not found")
+        print(id.planPieces)
+        print(plan_id)
+        return false
     }
     func actionSheet() {
         

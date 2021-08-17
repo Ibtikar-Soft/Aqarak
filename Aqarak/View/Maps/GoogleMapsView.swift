@@ -6,7 +6,6 @@
 //
 import Foundation
 import SwiftUI
-
 import GoogleMaps
 var mapView = GMSMapView()
 var marker = GMSMarker()
@@ -22,14 +21,7 @@ var marker = GMSMarker()
            func makeUIView(context: Self.Context) -> GMSMapView {
                let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: zoom)
                 mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-                let rectanglePath = GMSMutablePath()
-                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[4][0], longitude: location_drow[4][1]))
-                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[0][0], longitude: location_drow[0][1]))
-                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[1][0], longitude: location_drow[1][1]))
-                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[2][0], longitude: location_drow[2][1]))
-                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[3][0], longitude: location_drow[3][1]))
-                rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[4][0], longitude: location_drow[4][1]))
-                let rectangle = GMSPolyline(path: rectanglePath)
+                let rectangle = GMSPolyline(path: get_GMSMutablePath())
                 rectangle.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                 rectangle.map = mapView
                 return mapView
@@ -43,6 +35,24 @@ var marker = GMSMarker()
             let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             return newImage
+        }
+        func get_GMSMutablePath()->GMSMutablePath{
+            let rectanglePath = GMSMutablePath()
+            for pieces in location_drow
+            {
+                
+                rectanglePath.add(CLLocationCoordinate2D(latitude: pieces[0], longitude: pieces[1]))
+                
+                
+            }
+            rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[0][0], longitude: location_drow[0][1]))
+//            rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[4][0], longitude: location_drow[4][1]))
+//            rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[0][0], longitude: location_drow[0][1]))
+//            rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[1][0], longitude: location_drow[1][1]))
+//            rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[2][0], longitude: location_drow[2][1]))
+//            rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[3][0], longitude: location_drow[3][1]))
+//            rectanglePath.add(CLLocationCoordinate2D(latitude: location_drow[4][0], longitude: location_drow[4][1]))
+            return rectanglePath
         }
     }
 

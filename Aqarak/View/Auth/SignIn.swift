@@ -56,9 +56,8 @@ struct SignIn: View {
             
             Button(action: {
                 if FormValidation(){
-//                checkUserSignIn()
-                    VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.isLogin,Val: true)
-                    isSignInPressed=true
+                checkUserSignIn()
+                    
                 }
             }, label: {
                 Text("تسجيل دخول")
@@ -112,7 +111,7 @@ struct SignIn: View {
     func checkUserSignIn(){
 //        IsError=false
         
-        let prams = ["PhoneNo": StringFunction().numberStrToEnglish(numberStr: self.textBindingManager.text)]
+        let prams = ["PhoneNo": StringFunction().numberStrToEnglish(numberStr: self.textBindingManager.text), "Name" : ""]
 //                let prams = ["PhoneNo": self.textBindingManager.text,"Password": password]
 
         //                let prams = ["PhoneNo": "+966122222223","Password": "123456"]
@@ -124,7 +123,7 @@ struct SignIn: View {
             print(sectionR)
          
             if sectionR["responseCode"].int == 200{
-//
+                VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.user_id,Val: sectionR["response"]["id"].intValue)
                 VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.isLogin,Val: true)
                 isSignInPressed = true
             
