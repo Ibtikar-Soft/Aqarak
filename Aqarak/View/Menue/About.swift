@@ -27,7 +27,6 @@ struct About: View {
                 
             }
             HStack(){
-//                Spacer()
                 Text(GetAboutApp)
                 .multilineTextAlignment(.trailing)
                 .font(.custom(Fount_name.l.rawValue, size: 18))
@@ -49,7 +48,7 @@ struct About: View {
         print(sectionR)
         if sectionR["responseCode"].int == 200{
 //            let jsonDatas = try! JSONEncoder().encode()
-            self.GetAboutApp = sectionR["response"][0]["about1"].stringValue
+            self.GetAboutApp = sectionR["response"]["about1"].stringValue
             
         }
     } onError: { error in
