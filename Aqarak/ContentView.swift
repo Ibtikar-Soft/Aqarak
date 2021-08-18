@@ -16,6 +16,9 @@ struct ContentView: View {
         var latitude = 46.757459
 //        GoogleMapsView(longitude: latitude, latitude: longitude).cornerRadius(20)
        Splash()
+        .onAppear{
+//            VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.Favorate, Val: "")
+        }
 //        SignIn()
 //        TestButton()
 //        if isValidEmailAddress(emailAddressString: "awad619@hotmail.com"){

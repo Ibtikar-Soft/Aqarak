@@ -11,7 +11,7 @@ struct Profile: View {
     @State var emailAddress = ""
     @State var emailAddressError = false
     
-    @ObservedObject var textBindingManager = TextBindingManager(limit: 10)
+    @ObservedObject var textBindingManager = TextBindingManager(limit: 9)
     @State  var  showsAlert:Bool=false
     @State  var  message:String=""
     @State var phoneNumberError:Bool=false
@@ -58,13 +58,16 @@ struct Profile: View {
                     )
             Text("تعديل رقم الهاتف")
                 .font(.custom(Fount_name.l.rawValue, size: 14))
-                TextField("05xxxxxxxx", text: $textBindingManager.text, onEditingChanged: onEditingChanged(_:), onCommit: onCommit)
+                TextField("5xxxxxxxx", text: $textBindingManager.text, onEditingChanged: onEditingChanged(_:), onCommit: onCommit)
                     .textFieldStyle(CTFStyleClearBackground(width: 320, cornerRadius: 20, height: 50, showError: $phoneNumberError))
                     .modifier(customFountCR())
                     .foregroundColor(.AppGrayFount)
                     .keyboardType(.phonePad)
                     .overlay(
                         HStack{
+                            Text("+966")
+                                .frame(width: 40, height: 30, alignment:.center)
+                                .padding(.horizontal,10)
                             Spacer()
                             Image(systemName: "candybarphone").frame(width: 40, height: 30, alignment: .center).padding(.horizontal,10)
                         }
@@ -99,6 +102,10 @@ struct Profile: View {
         }.onTapGesture {
             hideKeyboard()
         }
+        .onAppear{
+            self.textBindingManager.text =   VarUserDefault.SysGlobalData.getGlobal(key: VarUserDefault.SysGlobalData.PhoneNo)
+            emailAddress = VarUserDefault.SysGlobalData.getGlobal(key: VarUserDefault.SysGlobalData.Email)
+        }
         .alert(isPresented: self.$showsAlert) {
             Alert(title: Text(message).font(.custom(Fount_name.b.rawValue, size: 16)) )
         }
@@ -106,19 +113,21 @@ struct Profile: View {
     }
 //    {"Id" : "1", "" : "Ayman", "PhoneNo" : "+966566373972"}
     func UpdateCustomer(){
-        let prams = ["PhoneNo": "0"+StringFunction().numberStrToEnglish(numberStr: self.textBindingManager.text), "Name" : emailAddress,"Id":"\(VarUserDefault.SysGlobalData.getGlobalInt(key: VarUserDefault.SysGlobalData.user_id))"]
+        let prams = ["PhoneNo": "+966"+StringFunction().numberStrToEnglish(numberStr: self.textBindingManager.text), "Name" : emailAddress,"Id":"\(VarUserDefault.SysGlobalData.getGlobalInt(key: VarUserDefault.SysGlobalData.user_id))"]
     print(Connection().getUrl(word: "UpdateCustomer"))
         print(prams)
-    RestAPI().deleteData(endUrl: Connection().getUrl(word: "UpdateCustomer"), parameters:prams ) { result in
+    RestAPI().postData(endUrl: Connection().getUrl(word: "UpdateCustomer"), parameters:prams ) { result in
         
         let sectionR = JSON(result!)
         print(sectionR)
         if sectionR["responseCode"].int == 200{
             let jsonDatas = try! JSONEncoder().encode(sectionR["response"])
-            let menus = try! JSONDecoder().decode([plantModal].self, from: jsonDatas)
+//            let menus = try! JSONDecoder().decode([plantModal].self, from: jsonDatas)
 //            menue=menus
 //            getFav()
 //            print(menue)
+            VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.PhoneNo,Val: StringFunction().numberStrToEnglish(numberStr: self.textBindingManager.text))
+            VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.Email,Val: emailAddress)
             message = "تم التعديل بنجاح"
             showsAlert=true
         }
@@ -128,7 +137,7 @@ struct Profile: View {
     
 }
     func FormValidation() -> Bool {
-        self.phoneNumberError = (self.textBindingManager.text.isEmpty || self.textBindingManager.text.count != 10 || !self.textBindingManager.text.hasPrefix("05")) ? true : false
+        self.phoneNumberError = (self.textBindingManager.text.isEmpty || self.textBindingManager.text.count != 9 || !self.textBindingManager.text.hasPrefix("5")) ? true : false
         emailAddressError =  !isValidEmailAddress(emailAddressString: emailAddress)
         if phoneNumberError{
             message="خطاء في رقم الجوال"

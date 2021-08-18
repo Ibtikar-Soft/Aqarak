@@ -92,7 +92,7 @@ struct Fav: View {
             }
             Spacer()
         }.onAppear{
-//            VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.Favorate, Val: "")
+            
             getFav()
         }
     }
@@ -104,7 +104,7 @@ struct Fav: View {
         print(sectionR)
         if sectionR["responseCode"].int == 200{
             let jsonDatas = try! JSONEncoder().encode(sectionR["response"])
-            let menus = try! JSONDecoder().decode([plantModal].self, from: jsonDatas)
+//            let menus = try! JSONDecoder().decode([plantModal].self, from: jsonDatas)
 //            menue=menus
             getFav()
             removeTHis(id:id)
@@ -123,10 +123,10 @@ struct Fav: View {
         if VarUserDefault.SysGlobalData.getGlobalInt(key: VarUserDefault.SysGlobalData.user_id) > 0{
                 ////
               let nn=VarUserDefault.SysGlobalData.getGlobal(key: VarUserDefault.SysGlobalData.Favorate)
-            VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.Favorate, Val: "")
+//            VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.Favorate, Val: "")
             var sd=""//nn+"#\(id.id)#,"
               var useFav=nn.components(separatedBy:",")
-              var faveIndex=0
+         
               if useFav.count>0{
                   for iteam in 0...useFav.count-1{
                     if "#\(id)#" != useFav[iteam] {

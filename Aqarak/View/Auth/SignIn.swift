@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftyJSON
 struct SignIn: View {
-    @ObservedObject var textBindingManager = TextBindingManager(limit: 10)
+    @ObservedObject var textBindingManager = TextBindingManager(limit: 9)
     @State  var  showsAlert:Bool=false
     @State  var  message:String=""
     @State var phoneNumberError:Bool=false
@@ -40,13 +40,16 @@ struct SignIn: View {
             VStack(alignment: .trailing, spacing: 0){
                 Text("ادخل رقم الهاتف")
                     .font(.custom(Fount_name.l.rawValue, size: 14))
-                TextField("05xxxxxxxx", text: $textBindingManager.text, onEditingChanged: onEditingChanged(_:), onCommit: onCommit)
+                TextField("5xxxxxxxx", text: $textBindingManager.text, onEditingChanged: onEditingChanged(_:), onCommit: onCommit)
                     .textFieldStyle(CTFStyleClearBackground(width: 320, cornerRadius: 20, height: 50, showError: $phoneNumberError))
                     .modifier(customFountCR())
                     .foregroundColor(.AppGrayFount)
                     .keyboardType(.phonePad)
                     .overlay(
                         HStack{
+                            Text("+966")
+                                .frame(width: 40, height: 30, alignment:.center)
+                                .padding(.horizontal,10)
                             Spacer()
                             Image(systemName: "candybarphone").frame(width: 40, height: 30, alignment: .center).padding(.horizontal,10)
                         }
@@ -100,7 +103,7 @@ struct SignIn: View {
        }
     func FormValidation() -> Bool {
         
-        self.phoneNumberError = (self.textBindingManager.text.isEmpty || self.textBindingManager.text.count != 10 || !self.textBindingManager.text.hasPrefix("05")) ? true : false
+        self.phoneNumberError = (self.textBindingManager.text.isEmpty || self.textBindingManager.text.count != 9 || !self.textBindingManager.text.hasPrefix("5")) ? true : false
         
         if phoneNumberError{
             message="خطاء في رقم الجوال"
@@ -111,7 +114,7 @@ struct SignIn: View {
     func checkUserSignIn(){
 //        IsError=false
         
-        let prams = ["PhoneNo": StringFunction().numberStrToEnglish(numberStr: self.textBindingManager.text), "Name" : ""]
+        let prams = ["PhoneNo": "+966"+StringFunction().numberStrToEnglish(numberStr: self.textBindingManager.text), "Name" : ""]
 //                let prams = ["PhoneNo": self.textBindingManager.text,"Password": password]
 
         //                let prams = ["PhoneNo": "+966122222223","Password": "123456"]
@@ -124,6 +127,7 @@ struct SignIn: View {
          
             if sectionR["responseCode"].int == 200{
                 VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.user_id,Val: sectionR["response"]["id"].intValue)
+                VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.PhoneNo,Val: StringFunction().numberStrToEnglish(numberStr: self.textBindingManager.text))
                 VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.isLogin,Val: true)
                 isSignInPressed = true
             

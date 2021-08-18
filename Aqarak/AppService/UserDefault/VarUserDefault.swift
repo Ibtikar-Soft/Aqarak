@@ -12,7 +12,10 @@ class VarUserDefault{
     var isLogin: String = "isLogin"
    var isFirestOpen:String = "isFirestOpen"
     var user_id:String = "user_id"
+    var PhoneNo:String = "PhoneNo"
+    var Email:String = "Email"
     var Favorate:String = "Favorate"
+    
     
     
     //auth

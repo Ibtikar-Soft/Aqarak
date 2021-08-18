@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
-
+import SwiftyJSON
 struct About: View {
+    @State var GetAboutApp:String=""
     var body: some View {
         VStack{
         HStack{
@@ -25,14 +26,37 @@ struct About: View {
                     .foregroundColor(.AppFount).padding(.trailing,30)
                 
             }
-            Text("لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا كيو أوفيسيا ديسيريونتموليت انيم أيدي ."+"لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا كيو أوفيسيا ديسيريونتموليت انيم أيدي ايست لابوريوم.")
-                .font(.custom(Fount_name.l.rawValue, size: 18))
+            HStack(){
+//                Spacer()
+                Text(GetAboutApp)
                 .multilineTextAlignment(.trailing)
-                .frame(maxWidth: 300)
+                .font(.custom(Fount_name.l.rawValue, size: 18))
+                .frame(maxWidth:  UIScreen.width*0.8)
                 .foregroundColor(.AppGrayFount)
+//            Spacer(
+            }.frame(width: UIScreen.width*0.8)
             Spacer()
+        }.onAppear{
+            getAbout()
         }
     }
+    func getAbout(){
+        
+    print(Connection().getUrl(word: "GetAbout"))
+    RestAPI().getData(endUrl: Connection().getUrl(word: "GetAbout"), parameters: [:]) { result in
+        
+        let sectionR = JSON(result!)
+        print(sectionR)
+        if sectionR["responseCode"].int == 200{
+//            let jsonDatas = try! JSONEncoder().encode()
+            self.GetAboutApp = sectionR["response"][0]["about1"].stringValue
+            
+        }
+    } onError: { error in
+        print(error!)
+    }
+    
+}
 }
 
 struct About_Previews: PreviewProvider {

@@ -37,6 +37,9 @@ class Connection:NSData
         case "UpdateCustomer":
             link = baseUrl+"UpdateCustomer"
             break
+        case "GetAbout":
+            link = baseUrl+"GetAbout"
+            break
             
             
             

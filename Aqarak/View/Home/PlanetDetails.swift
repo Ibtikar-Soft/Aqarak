@@ -22,6 +22,7 @@ struct PlanetDetails: View {
     @State var isSignInPressed:Bool=false
     @State var isGoToMap:Bool=false
     @State var changeViewMode:Bool=false
+    @State var inInLocalFav:Bool=false
     
     @State var isShareViewRepresentesd:Bool=false
     @State var plan_number:String=""
@@ -48,24 +49,26 @@ struct PlanetDetails: View {
 //            ZStack{
 //                if changeViewMode{
             VStack(spacing:5){
-            HStack(spacing:0){
+                HStack(alignment:.center,spacing: 0){
 
                 TextField("", text: $plan_number)
-                    .textFieldStyle(CTFStyleClearBackground(width: UIScreen.width*0.8, cornerRadius: 20, height: 50, showError: $emailAddressError))
+                    .textFieldStyle(CTFStyleClearBackground(width: (UIScreen.width*0.8)+40, cornerRadius: 20, height: 50, showError: $emailAddressError))
                                         .modifier(customFountCR())
                                         .foregroundColor(.AppGrayFount)
                                         .keyboardType(.numberPad)
-//                    .overlay(
-//
-//                    )
+                    .overlay(
+
+
                 
-                                   
-                Image(systemName: "magnifyingglass.circle.fill").resizable().foregroundColor(.AppFount).frame(width: 30, height: 30, alignment: .center).onTapGesture {
+                        HStack{
+                            Spacer()
+                Image(systemName: "magnifyingglass.circle.fill").resizable().foregroundColor(.AppFount).frame(width: 30, height: 30, alignment: .center).offset(x: -10).onTapGesture {
                         if gitPlanCordination(plan_id: plan_number){
                                                 latitude_longitude_change.toggle()
                         }
-                }.offset(x: -40)
-                
+                }
+                }
+                                )
                 
 //                HStack{
 //                    Spacer()
@@ -77,30 +80,26 @@ struct PlanetDetails: View {
 //                    }
 //                    .padding(.horizontal,10)
 //                }
-            }
+            }//.background(Color.red)
+                .frame(width: UIScreen.width*0.8)
 //
 //            }.frame(width: UIScreen.width*0.8, height: 40, alignment: .center)
                 
 //                SearchMapView(longitude: $latitude, latitude: $longitude)
                 if latitude_longitude_change{
                     SearchMap(longitude: longitude, latitude: latitude, location_drow: id.cord)
-                        
                         .frame(width: UIScreen.width*0.8, alignment: .center)
-                        .cornerRadius(20).onTapGesture {
-                                hideKeyboard()
-                            }
+                        .cornerRadius(20)//.background(Color.blue)
                 }else{
                     SearchMap(longitude: longitude, latitude: latitude ,location_drow: id.cord)
-                        .frame(width: UIScreen.width*0.8, alignment: .center).onTapGesture {
-                    hideKeyboard()
-                }
-                    .cornerRadius(20)
+                        .frame(width: UIScreen.width*0.8, alignment: .center)
+                    .cornerRadius(20)//.background(Color.red)
                 }
 //                .onLongPressGesture {
 //                    changeViewMode.toggle()
 //                }
             }
-            .padding(20)
+            //.padding(20)
 //
 //                }
 //                else{
@@ -119,7 +118,7 @@ struct PlanetDetails: View {
 //            }
 //            Spacer()
             HStack{
-                Image(id.inInLocalFav ? Planet_Action_Button.redheart.rawValue : Planet_Action_Button.heart.rawValue).resizable().frame(width: 50, height: 50, alignment: .center).onTapGesture {
+                Image(inInLocalFav ? Planet_Action_Button.redheart.rawValue : Planet_Action_Button.heart.rawValue).resizable().frame(width: 50, height: 50, alignment: .center).onTapGesture {
                     addToLocalFav()
 //                    addToFavorate(plan_id:id.id)
                 }
@@ -141,6 +140,7 @@ struct PlanetDetails: View {
         }.onAppear{
             print(id)
             print(id.inInLocalFav)
+            inInLocalFav=id.inInLocalFav
             print(id.cord[0][1])
             longitude = id.cord[0][0]
                 latitude = id.cord[0][1]
@@ -156,6 +156,56 @@ struct PlanetDetails: View {
             hideKeyboard()
         }
     }
+    func deleteFav(id:String){
+    print(Connection().getUrl(word: "DeleteFavor")+id)
+    RestAPI().postData(endUrl: Connection().getUrl(word: "DeleteFavor")+id, parameters: [:]) { result in
+        
+        let sectionR = JSON(result!)
+        print(sectionR)
+        if sectionR["responseCode"].int == 200{
+            let jsonDatas = try! JSONEncoder().encode(sectionR["response"])
+//            let menus = try! JSONDecoder().decode([plantModal].self, from: jsonDatas)
+//            menue=menus
+//            getFav()
+            inInLocalFav.toggle()
+            removeTHis(id:id)
+//            print(menue)
+        }
+        else if sectionR["responseCode"].int == 410{
+            
+        }
+    } onError: { error in
+        print(error!)
+    }
+    
+}
+    
+    func removeTHis(id:String){
+        
+        if VarUserDefault.SysGlobalData.getGlobalInt(key: VarUserDefault.SysGlobalData.user_id) > 0{
+                ////
+              let nn=VarUserDefault.SysGlobalData.getGlobal(key: VarUserDefault.SysGlobalData.Favorate)
+//            VarUserDefault.SysGlobalData.setGlobal(Key: VarUserDefault.SysGlobalData.Favorate, Val: "")
+            var sd=""//nn+"#\(id.id)#,"
+              var useFav=nn.components(separatedBy:",")
+              var faveIndex=0
+              if useFav.count>0{
+                  for iteam in 0...useFav.count-1{
+                    if "#\(id)#" != useFav[iteam] {
+                        var sd=sd+"#\(useFav[iteam])#,"
+                      }
+                  }
+              }
+//              if(!minato){
+                
+                VarUserDefault.SysGlobalData.setGlobal(Key: "Favorate", Val: sd)
+                print(VarUserDefault.SysGlobalData.getGlobal(key:VarUserDefault.SysGlobalData.Favorate))
+//                addToFavorate(plan_id:id.id)
+//              }
+            }
+
+        
+    }
     func addToFavorate(plan_id:Int){
         
         let prams = ["CustomerID" : VarUserDefault.SysGlobalData.getGlobalInt(key: VarUserDefault.SysGlobalData.user_id), "PlanID" : plan_id]
@@ -169,7 +219,8 @@ struct PlanetDetails: View {
             if sectionR["responseCode"].int == 200{
                 message = "تمت  الاضافة الى المفضلة"
                 showsAlert=true
-                addToLocalFav()
+//                addToLocalFav()
+                inInLocalFav.toggle()
             }
             else if sectionR["responseCode"].int == 405{ // user not active
 //                displayItem=1
@@ -203,13 +254,15 @@ struct PlanetDetails: View {
               var nn=VarUserDefault.SysGlobalData.getGlobal(key: VarUserDefault.SysGlobalData.Favorate)
               var useFav=nn.components(separatedBy:",")
               var faveIndex=0
+            print(useFav)
               if useFav.count>0{
                   for iteam in 0...useFav.count-1{
                     if "#\(id.id)#" == useFav[iteam] {
                           faveIndex=iteam
                           minato=true
-                            message="هذا العنصر موجود مسبقا"
+                            message=" تمت ازالة العنصر من المفضلة"
                             showsAlert=true
+                            deleteFav(id: "\(id.id)")
                           break
                       }
                   }
@@ -219,6 +272,7 @@ struct PlanetDetails: View {
                 VarUserDefault.SysGlobalData.setGlobal(Key: "Favorate", Val: sd)
                 print(VarUserDefault.SysGlobalData.getGlobal(key:VarUserDefault.SysGlobalData.Favorate))
                 addToFavorate(plan_id:id.id)
+                
               }
             }
             else{
